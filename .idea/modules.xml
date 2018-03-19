@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gRPCTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gRPCTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gRPCTest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/gRPCTest_main.iml" group="gRPCTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gRPCTest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/gRPCTest_test.iml" group="gRPCTest" />
+    </modules>
+  </component>
+</project>
