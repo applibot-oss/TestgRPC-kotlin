@@ -7,7 +7,6 @@ import org.lognet.springboot.grpc.GRpcService
 
 @GRpcService
 class EchoServer : EchoServiceGrpc.EchoServiceImplBase() {
-
     override fun echoService(request: EchoMessage?, responseObserver: StreamObserver<EchoMessage>?) {
         val msg = EchoMessage.newBuilder().setMessage("echo \\${request?.message}/").build()
         responseObserver?.onNext(msg)

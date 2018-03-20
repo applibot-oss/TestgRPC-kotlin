@@ -58,6 +58,7 @@ protobuf {
             artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
         }
     }
+
     generateProtoTasks {
         all().each { task ->
             task.builtins {
