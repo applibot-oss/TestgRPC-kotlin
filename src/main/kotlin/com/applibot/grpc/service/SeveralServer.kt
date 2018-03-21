@@ -9,8 +9,19 @@ import org.lognet.springboot.grpc.GRpcService
 @GRpcService
 class SeveralServer : SeveralServiceGrpc.SeveralServiceImplBase() {
     override fun getSeveralData(request: SeveralRequest?, responseObserver: StreamObserver<SeveralResponse>?) {
-        val resp = SeveralResponse.newBuilder().setIsSuccess(true).addAllNames(listOf("taro", "jiro", "kogoro"))
-                .addAllOlds(listOf(30, 42, 12)).build()
+        println("float " + request?.floatData)
+        println("double " + request?.doubleData)
+        println("int " + request?.intData)
+        println("long " + request?.longData)
+        println("bool " + request?.boolData)
+        println("string " + request?.stringData)
+        println("bytes " + request?.byteData)
+        println("list " + request?.listList)
+        println("inner " + request?.innerListList)
+        println("dic " + request?.dicMap)
+        println("dicRepeat " + request?.dicRepeatMap)
+        println("Animal " + request?.animal)
+        val resp = SeveralResponse.newBuilder().setIsSuccess(true).build()
         responseObserver?.onNext(resp)
         responseObserver?.onCompleted()
     }

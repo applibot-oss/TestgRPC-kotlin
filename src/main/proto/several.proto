@@ -13,17 +13,32 @@ service SeveralService {
     }
 }
 
+enum Animal {
+    DOG = 0;
+    CAT = 1;
+    PIG = 2;
+    FOX = 3;
+}
+
 message SeveralRequest {
-    string id = 1;
-    int32 number = 2;
-    repeated int32 list = 3;
-    float precision = 4;
-    bool flag = 5;
-    map<int32, string> dic = 6;
+    float floatData = 1;
+    double doubleData = 2;
+    int32 intData = 3;
+    int64 longData = 4;
+    bool boolData = 5;
+    string stringData = 6;
+    bytes byteData = 7;
+    repeated int32 list = 8;
+    repeated innerTest innerList = 9;
+    map<int32, string> dic = 10;
+    map<int32, innerTest> dicRepeat = 11;
+    Animal animal = 12;
+}
+
+message innerTest {
+    repeated float fList = 1;
 }
 
 message SeveralResponse {
     bool isSuccess = 1;
-    repeated string names = 2;
-    repeated uint64 olds = 3;
 }
