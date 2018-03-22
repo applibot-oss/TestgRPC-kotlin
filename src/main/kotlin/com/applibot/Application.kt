@@ -1,7 +1,9 @@
-package com.applibot.grpc.service
+package com.applibot
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+
+annotation class OpenClass
 
 @SpringBootApplication
 class Application {
