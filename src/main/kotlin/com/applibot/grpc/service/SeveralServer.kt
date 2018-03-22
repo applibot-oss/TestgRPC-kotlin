@@ -5,22 +5,16 @@ import com.applibot.gen.several.SeveralResponse
 import com.applibot.gen.several.SeveralServiceGrpc
 import io.grpc.stub.StreamObserver
 import org.lognet.springboot.grpc.GRpcService
+import java.io.File
 
 @GRpcService
 class SeveralServer : SeveralServiceGrpc.SeveralServiceImplBase() {
+
+    val file = File("/Users/s01308/result/server.txt").absoluteFile
+
     override fun getSeveralData(request: SeveralRequest?, responseObserver: StreamObserver<SeveralResponse>?) {
-        println("float:  ${request?.floatData}")
-        println("double: ${request?.doubleData}")
-        println("int: ${request?.intData}")
-        println("long: ${request?.longData}")
-        println("bool: ${request?.boolData}")
-        println("string: ${request?.stringData}")
-        println("bytes: ${request?.byteData}")
-        println("list: ${request?.listList}")
-        println("inner: ${request?.innerListList}")
-        println("dic: ${request?.dicMap}")
-        println("dicRepeat: ${request?.dicRepeatMap}")
-        println("Animal: ${request?.animal}")
+        val time = System.currentTimeMillis()
+        file.appendText("$time\n")
         val resp = SeveralResponse.newBuilder().setIsSuccess(true).build()
         responseObserver?.onNext(resp)
         responseObserver?.onCompleted()
