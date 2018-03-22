@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping(path = ["several"])
-class TestController {
+class SeveralController {
 
-    @RequestMapping(path = ["test"], method = arrayOf(RequestMethod.POST))
+    @RequestMapping(path = ["data"], method = arrayOf(RequestMethod.POST))
     fun getSeveralData(@RequestBody model: Several): Several {
         return Several(model.id, model.name, model.email)
     }
