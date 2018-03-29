@@ -12,7 +12,7 @@ import java.io.File
 @RequestMapping(path = ["several"])
 class SeveralController {
 
-    val file = File("/Users/s01308/jsonResult/server.txt").absoluteFile
+    val file = File("./jsonResult/server.txt")
 
     @RequestMapping(path = ["data"], method = arrayOf(RequestMethod.POST))
     fun getSeveralData(@RequestBody model: SeveralDataBean): SeveralDataBean {

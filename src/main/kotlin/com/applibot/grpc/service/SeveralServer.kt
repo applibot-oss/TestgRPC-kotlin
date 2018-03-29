@@ -9,7 +9,7 @@ import java.io.File
 @GRpcService
 class SeveralServer : SeveralServiceGrpc.SeveralServiceImplBase() {
 
-    val file = File("/Users/s01308/result/server.txt").absoluteFile
+    val file = File("./result/server.txt")
 
     override fun getSeveralData(request: SeveralData?, responseObserver: StreamObserver<SeveralData>?) {
         val time = System.currentTimeMillis()
